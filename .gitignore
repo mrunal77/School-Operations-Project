@@ -1,2 +1,4 @@
 /bin
 /obj
+/.vs
+/School_Api_Project.csproj.user
