@@ -8,6 +8,8 @@ namespace School_Api_Project.UnitOfWork_Configuration.Interface
     {
         IStudentRepository Students { get; }
         IStaffRepository Staff { get; }
+        IStudentClassRepository StudentClass { get; }
+
         int Complete();
     }
 }

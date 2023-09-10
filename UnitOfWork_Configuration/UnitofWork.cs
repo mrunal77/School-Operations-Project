@@ -10,8 +10,9 @@ namespace School_Api_Project.UnitOfWork_Configuration.UnitOfWorkImplementation
 
         public IStudentRepository Students { get; }
         public IStaffRepository Staff { get; }
+        public IStudentClassRepository StudentClass { get; }
 
-        public UnitOfWork(MTSchool_DbContext mtSchool_DbContext, IStudentRepository studentsRepository, IStaffRepository staffRepository)
+        public UnitOfWork(MTSchool_DbContext mtSchool_DbContext, IStudentRepository studentsRepository, IStaffRepository staffRepository, IStudentClassRepository studentClassRepository)
         {
             //DbContext Dependency
             this._context = mtSchool_DbContext;
@@ -19,6 +20,7 @@ namespace School_Api_Project.UnitOfWork_Configuration.UnitOfWorkImplementation
 
             this.Students = studentsRepository;
             this.Staff = staffRepository;
+            this.StudentClass = studentClassRepository;
         }
         public int Complete()
         {

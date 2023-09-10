@@ -19,7 +19,7 @@ namespace School_Api_Project.Repository
         }
         public async Task<IEnumerable<Student>> GetStudentsByStudentName(string studentName)
         {
-            return await _context.Students.Where(c=>c.FullName.Contains(studentName)).ToListAsync();
+            return await _context.students.Where(c=>c.FullName.Contains(studentName)).ToListAsync();
         }
         
     }
