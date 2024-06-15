@@ -40,6 +40,6 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-//app.MapGet("/", ()=> "Hello This is Minimal API.");
+app.MapGet("/", ()=> "Hello This is Minimal API.");
 
 app.Run();
