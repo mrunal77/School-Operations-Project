@@ -5,7 +5,7 @@
 namespace School_Api_Project.Migrations
 {
     /// <inheritdoc />
-    public partial class Initial_Create : Migration
+    public partial class InitialCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

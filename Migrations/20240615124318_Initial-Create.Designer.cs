@@ -11,15 +11,15 @@ using School_Api_Project.DbContextDirectory;
 namespace School_Api_Project.Migrations
 {
     [DbContext(typeof(MTSchool_DbContext))]
-    [Migration("20230905164157_Initial_Create")]
-    partial class Initial_Create
+    [Migration("20240615124318_Initial-Create")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.10")
+                .HasAnnotation("ProductVersion", "8.0.6")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);

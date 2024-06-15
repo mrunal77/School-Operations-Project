@@ -12,6 +12,8 @@ namespace School_Api_Project.DbContextDirectory
         public DbSet<Student> students { get; set; }
         public DbSet<Staff> staff { get; set; }
         public DbSet<StudentClass> studentClasses { get; set; }
+        public DbSet<Book> Books { get; set; }
+        public DbSet<BookCategory> BookCategory { get; set; }
 
     }
 }

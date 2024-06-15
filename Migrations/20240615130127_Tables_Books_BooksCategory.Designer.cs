@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using School_Api_Project.DbContextDirectory;
 
@@ -10,9 +11,11 @@ using School_Api_Project.DbContextDirectory;
 namespace School_Api_Project.Migrations
 {
     [DbContext(typeof(MTSchool_DbContext))]
-    partial class MTSchool_DbContextModelSnapshot : ModelSnapshot
+    [Migration("20240615130127_Tables_Books_BooksCategory")]
+    partial class Tables_Books_BooksCategory
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
