@@ -11,11 +11,11 @@ namespace School_Api_Project.Controllers
     public class StudentController : ControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;
-        private readonly IStudentAdmissionProcess studentAdmissionProcess;
-        public StudentController(IUnitOfWork unitOfWork, IStudentAdmissionProcess _studentAdmissionProcess)
+        private readonly IStudentAdmissionProcess _studentAdmissionProcess;
+        public StudentController(IUnitOfWork unitOfWork, IStudentAdmissionProcess studentAdmissionProcess)
         {
             _unitOfWork = unitOfWork;
-            studentAdmissionProcess = _studentAdmissionProcess;
+            _studentAdmissionProcess = studentAdmissionProcess;
         }
 
 
@@ -26,10 +26,10 @@ namespace School_Api_Project.Controllers
         [HttpGet(nameof(GetStudentByName))]
         public async Task<IActionResult> GetStudentByName([FromQuery] string studentFirstName) => Ok(await _unitOfWork.Students.GetStudentsByStudentName(studentFirstName));
 
-        [HttpPost]
+        [HttpPost(nameof(AddStudent))]
         public IActionResult AddStudent([FromBody] StudentDTO student)
         {
-            var studentRet = studentAdmissionProcess.StudentAdd(student);
+            var studentRet = _studentAdmissionProcess.StudentAdd(student);
             //var studentData = _unitOfWork.Students.Add(student);
             //_unitOfWork.Complete();
             return Ok(studentRet);
