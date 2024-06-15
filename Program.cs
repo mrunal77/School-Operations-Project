@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using School_Api_Project.DbContextDirectory;
 using School_Api_Project.Repository;
+using Swashbuckle.AspNetCore.SwaggerUI;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,7 +28,10 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(options =>
+
+        options.DocExpansion(DocExpansion.None)
+    );
 }
 
 app.UseHttpsRedirection();
@@ -36,6 +40,6 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-app.MapGet("/", ()=> "Hello This is Minimal API.");
+//app.MapGet("/", ()=> "Hello This is Minimal API.");
 
 app.Run();
